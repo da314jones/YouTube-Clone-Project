@@ -1,9 +1,9 @@
 const URL = import.meta.env.VITE_BASE_API_KEY
-
+// AIzaSyA0IgMjnP8N86eOnYOLQ5IU_0Xn-aOKdYw
 
 
 // Index/getAll
 export function getAllVideos (){
-    return fetch(`${URL}/videos`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}`)
     .then(res => res.json())
 }
