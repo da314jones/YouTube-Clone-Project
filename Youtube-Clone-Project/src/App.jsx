@@ -1,14 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { getAllVideos, createVideos } from '../fetch';
+import { getAllVideos } from '../fetch';
+
 
 function App() {
   console.log(getAllVideos)
-  console.log(createVideos)
+ 
 
   const [count, setCount] = useState(0)
+  const [loadingError, setLoadingError] = useState(false)
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() =>  {
+    console.log(videos)
+    getAllVideos()
+    .then((videoJson) => {
+      setVideos(videoJson)
+      setLoadingError(false)
+    })
+    .catch((err) => {
+      setLoadingError(true);
+      console.error(err)
+    })
+  }, [])
 
   return (
     <>
