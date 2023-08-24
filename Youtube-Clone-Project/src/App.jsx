@@ -6,7 +6,7 @@ import { getAllVideos } from '../fetch';
 
 
 function App() {
-  console.log(getAllVideos)
+ 
  
 
   const [count, setCount] = useState(0)
@@ -14,7 +14,7 @@ function App() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() =>  {
-    console.log(videos)
+    // console.log(videos)
     getAllVideos()
     .then((videoJson) => {
       setVideos(videoJson)
