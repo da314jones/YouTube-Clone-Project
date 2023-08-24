@@ -20,9 +20,9 @@ function App() {
       setVideos(videosJson)
       setLoadingError(false)
     })
-    .catch((error) => {
+    .catch((err) => {
       setLoadingError(true);
-      console.error(error)
+      console.error(err)
     })
   }, [])
 
