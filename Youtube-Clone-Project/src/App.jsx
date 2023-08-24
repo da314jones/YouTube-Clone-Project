@@ -16,8 +16,8 @@ function App() {
   useEffect(() =>  {
     // console.log(videos)
     getAllVideos()
-    .then((videoJson) => {
-      setVideos(videoJson)
+    .then((videosJson) => {
+      setVideos(videosJson)
       setLoadingError(false)
     })
     .catch((err) => {
