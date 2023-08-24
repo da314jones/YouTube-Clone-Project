@@ -1,5 +1,5 @@
 const URL = import.meta.env.VITE_BASE_API_KEY
-// AIzaSyA0IgMjnP8N86eOnYOLQ5IU_0Xn-aOKdYw
+
 
 
 // Index/getAll
