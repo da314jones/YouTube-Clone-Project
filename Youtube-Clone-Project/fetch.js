@@ -6,18 +6,10 @@ const URL = import.meta.env.VITE_BASE_API_KEY
 
 export function getAllVideos(){
 
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&channelId=${channelId}&part=snippet,id&order=date&maxResult=20`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}`)
 
     .then(res => res.json())
 }
 
 
 
-// import React from "react";
-//  export const CloneVideos = () => {
-//     return (
-//         <div>
-//             <header> Welcome </header>
-//         </div>
-//     )
-//  }
