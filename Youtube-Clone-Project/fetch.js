@@ -10,3 +10,14 @@ export function getAllVideos(){
 
     .then(res => res.json())
 }
+
+
+
+// import React from "react";
+//  export const CloneVideos = () => {
+//     return (
+//         <div>
+//             <header> Welcome </header>
+//         </div>
+//     )
+//  }
