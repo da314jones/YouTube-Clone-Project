@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function VideoPlayer() {
   return (
-    <div>
-      
-    </div>
+    <video  width="" height="" controls>
+      <source src={} type="video/mp4" />
+    </video>
   )
 }
