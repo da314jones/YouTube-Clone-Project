@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function VideoPlayer() {
+export default function IframePlayer() {
   return (
-    <video  width="" height="" controls>
-      <source src={} type="video/mp4" />
-    </video>
+    <iframe
+    width="480"
+    height="270"
+    src={}
+    frameborder="0"
+    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+    allowFullScreen
+    ></iframe>
   )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getOneVideo } from '../../Api/fetch'
-import VideoPlayer from './VideoPlayer';
+import IframePlayer from './VideoPlayer';
 
 export default function VideoShowPage() {
     const { videoId } = useParams();
@@ -26,8 +26,8 @@ export default function VideoShowPage() {
     
   return (
     <div>
-      <h1>{</h1>
-      <VideoPlayer videoSrc={} />
+      <h1>{}</h1>
+      <IframePlayer videoSrc={} />
     </div>
   )
 }
