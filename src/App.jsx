@@ -11,6 +11,7 @@ import SearchBar from './components/SearchBar';
 import TeamInfo from './components/TeamInfo';
 import VideoShowPage from './components/VideoShowPage';
 import VideoThumbNailsList from './components/VideoThumbNailsList';
+import IframePlayer from './components/IframePlyer';
 
 function App() {
  
