@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { getOneVideo } from '../../Api/fetch'
-import IframePlayer from './VideoPlayer';
+import IframePlayer from './IframePlyer';
 
-export default function VideoShowPage() {
+export default function VideoShowPage({videos}) {
     const { videoId } = useParams();
     const [video, setVideo] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -23,11 +23,13 @@ export default function VideoShowPage() {
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
+
+    console.log(video)
     
   return (
     <div>
       <h1>{}</h1>
-      <IframePlayer videoSrc={} />
+      <IframePlayer videoSrc={videos} />
     </div>
   )
 }
