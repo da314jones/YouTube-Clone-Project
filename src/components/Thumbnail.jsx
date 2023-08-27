@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Thumbnail(video) {
+export default function ThumbNail({videos}) {
 
     return (
         <div className='thumbnail'>
             <img src="" alt="" />
-            <p>{videotitle}</p>
+            <p>{videos.title}</p>
         </div>
     )
 }

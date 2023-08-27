@@ -1,11 +1,10 @@
-import React from 'react';
+import React from 'react'
+import VideoShowPage from './VideoShowPage'
 
-const VideoThumbNails = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+export default function VideoThumbNailsList({videos}) {
+  return (
+    <div>
+      <VideoShowPage videos={videos}/>
+    </div>
+  )
 }
-
-export default VideoThumbNails;

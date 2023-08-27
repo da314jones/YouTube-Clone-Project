@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { getAllVideos } from '../fetch';
+import { getAllVideos } from '../Api/fetch';
+import About from './components/About';
+import CommentsForm from './components/CommentsForm';
+import CommentsList from './components/CommentsList';
+import Home from './components/Home';
+import NavBar from './components/NavBar';
+import SearchBar from './components/SearchBar';
+import TeamInfo from './components/TeamInfo';
+import ThumbNail from './components/Thumbnail';
+import VideoShowPage from './components/VideoShowPage';
+import VideoThumbNailsList from './components/VideoThumbNailsList';
 
 
 function App() {
@@ -29,28 +37,21 @@ function App() {
   console.log(videos);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+  
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/videos/:videoId" element={<VideoShowPage />}  />
+          <Route path="/thumbnails" element={<VideoThumbNailsList />}  />
+          <Route path="/about" element={<About />}  />
+          <Route path="/team" element={<TeamInfo/>}  />
+          <Route path="/search" element={<SearchBar />}  />
+          <Route path="/comments" element={<CommentsList />}  />
+          <Route path="/comments-form" element={<CommentsForm />}  />
+        </Routes>
+        <p>Hello</p>
+      </Router>
   )
 }
 
