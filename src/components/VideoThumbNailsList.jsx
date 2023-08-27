@@ -1,10 +1,10 @@
-import React from 'react'
-import VideoShowPage from './VideoShowPage'
+import { useState } from 'react'
+import ThumbNail from './Thumbnail'
 
 export default function VideoThumbNailsList({videos}) {
   return (
     <div>
-      <VideoShowPage videos={videos}/>
+      <ThumbNail key={index} videos={videos}/>
     </div>
   )
 }
