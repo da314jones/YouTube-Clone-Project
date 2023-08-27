@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
 import { getAllVideos } from '../Api/fetch';
 import About from './components/About';
@@ -8,10 +9,8 @@ import Home from './components/Home';
 import NavBar from './components/NavBar';
 import SearchBar from './components/SearchBar';
 import TeamInfo from './components/TeamInfo';
-import ThumbNail from './components/Thumbnail';
 import VideoShowPage from './components/VideoShowPage';
 import VideoThumbNailsList from './components/VideoThumbNailsList';
-
 
 function App() {
  
@@ -42,15 +41,15 @@ function App() {
         <NavBar />
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/videos/:videoId" element={<VideoShowPage />}  />
-          <Route path="/thumbnails" element={<VideoThumbNailsList />}  />
+          <Route path="/videos/:videoId" element={<VideoShowPage videos={videos} />}  />
+          <Route path="/thumbnails" element={<VideoThumbNailsList videos={videos} />}  />
           <Route path="/about" element={<About />}  />
           <Route path="/team" element={<TeamInfo/>}  />
           <Route path="/search" element={<SearchBar />}  />
           <Route path="/comments" element={<CommentsList />}  />
           <Route path="/comments-form" element={<CommentsForm />}  />
         </Routes>
-        <p>Hello</p>
+        {loadingError && <p>Error loading videos.</p>}
       </Router>
   )
 }

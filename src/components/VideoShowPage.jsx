@@ -28,8 +28,8 @@ export default function VideoShowPage({videos}) {
     
   return (
     <div>
-      <h1>{}</h1>
-      <IframePlayer videoSrc={videos} />
+      <h1>{video ? video.title : "Loading..."}</h1>
+      <IframePlayer videoSrc={video ? video.url : ""} />
     </div>
   )
 }

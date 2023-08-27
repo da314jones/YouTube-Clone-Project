@@ -4,7 +4,7 @@ export default function ThumbNail({videos}) {
 
     return (
         <div className='thumbnail'>
-            <img src="" alt="" />
+            <img src={video.thumbnailUrl} alt={video.title} />
             <p>{videos.title}</p>
         </div>
     )
