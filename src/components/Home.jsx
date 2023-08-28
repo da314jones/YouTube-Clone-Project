@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-import React from 'react';
-import IframePlayer from './IframePlayer';
-
-const Home = () => {
-    return (
-        <div>
-            <IframePlayer />
-        </div>
-    );
-}
-=======
 import React from "react";
-import IframePlayer from "./IframePlyer";
+import IframePlayer from "./IframePlayer";
 import NavBar from "./NavBar";
 
 const Home = () => {
@@ -25,6 +13,6 @@ const Home = () => {
     </div>
   );
 };
->>>>>>> djones
+
 
 export default Home;
