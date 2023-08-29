@@ -1,18 +1,22 @@
-import React from "react";
+import { useLocation } from "react-router-dom";
 import IframePlayer from "./IframePlayer";
 import NavBar from "./NavBar";
+import SearchBar from "./SearchBar";
 
-const Home = () => {
+export default function Home({}) {
+  const location = useLocation();
+
   return (
     <div>
-        <header>
-            <h1>You Tube Clone</h1>
-            <NavBar />
-        </header>
-      <IframePlayer />
+      <header>
+        <NavBar />
+        <IframePlayer />
+        {location.pathname === '/' && (
+          <footer>
+            <SearchBar />
+          </footer>
+        )}
+      </header>
     </div>
   );
 };
-
-
-export default Home;

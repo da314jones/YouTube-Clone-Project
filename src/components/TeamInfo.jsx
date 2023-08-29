@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TeamInfo = () => {
+export default function  TeamInfo() {
     return (
         <div>
             
@@ -8,4 +8,3 @@ const TeamInfo = () => {
     );
 }
 
-export default TeamInfo;

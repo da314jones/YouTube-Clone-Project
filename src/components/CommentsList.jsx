@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CommentsList = () => {
+export default function CommentsList() {
     return (
         <div>
             
@@ -8,4 +8,3 @@ const CommentsList = () => {
     );
 }
 
-export default CommentsList;

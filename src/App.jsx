@@ -41,16 +41,17 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route index element={<Home />} />
+          <Route path='/' element={<Home />} />
+          <Route path="/about" element={<About />}  />
           <Route path="/videos/:videoId" element={<VideoShowPage videos={videos} />}  />
           <Route path="/thumbnails" element={<VideoThumbNailsList videos={videos} />}  />
-          <Route path="/about" element={<About />}  />
           <Route path="/team" element={<TeamInfo/>}  />
           <Route path="/search" element={<SearchBar />}  />
           <Route path="/comments" element={<CommentsList />}  />
           <Route path="/comments-form" element={<CommentsForm />}  />
         </Routes>
         {loadingError && <p>Error loading videos.</p>}
+        <SearchBar />
       </Router>
   )
 }
