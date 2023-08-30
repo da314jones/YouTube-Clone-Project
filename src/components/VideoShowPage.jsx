@@ -28,9 +28,9 @@ export default function VideoShowPage({videos}) {
     
   return (
     <div>
-
-      <IframePlayer videoSrc={videos} />
-
+      <IframePlayer />
+      {/* comments map will go here */}
+      {/* NEW comments will go here */}
     </div>
   )
 }
