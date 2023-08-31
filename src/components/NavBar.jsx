@@ -1,13 +1,11 @@
-import { useLocation, Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
-
-export default function NavBar({}) {
-  const location = useLocation();
+export default function NavBar() {
 
   return (
     <div className='navbar'>
-      <Link to="/">You Tube </Link>
-      <Link to="about"> About</Link>
+      <Link to="/">You Tube</Link>
+      <Link to="/about">About</Link>
     </div>
   )
 }

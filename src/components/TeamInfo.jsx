@@ -8,6 +8,15 @@ export default function TeamInfo() {
       <header>
         <NavBar />
         <SearchBar />
+        <Card>
+          Nicole Slater
+        </Card>
+        <Card>
+          Dwayne Jones
+        </Card>
+        <Card>
+          Jefferson Chua
+        </Card>
       </header>
     </div>
   );

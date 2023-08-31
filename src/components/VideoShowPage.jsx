@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getCommentsByVideoId, getOneVideo } from "../../Api/fetch";
@@ -9,8 +8,8 @@ import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 
 export default function VideoShowPage({ items }) {
-  console.log(videoId);
   const { videoId } = useParams();
+  console.log(videoId);
   const [video, setVideo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,7 +25,7 @@ export default function VideoShowPage({ items }) {
         .catch((err) => {
           setError(err.message);
           setLoading(false);
-          console.Error(err);
+          console.error(err);
         });
 
       getCommentsByVideoId(videoId)
@@ -38,6 +37,10 @@ export default function VideoShowPage({ items }) {
         });
     }
   }, [videoId]);
+  
+  if (!videoId) {
+    return <div>Loading...</div>
+  }
 
   const iframeSrc = `http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://example.com`;
 
