@@ -9,6 +9,7 @@ export default function ThumbNail({item}) {
             <img src={item.snippet.thumbnails.default.url} alt={item.snippet.title} />
             </Link>
             <p>{item.snippet.title}</p>
+            <p>{item.snippet.description}</p>
         </div>
     )
 }

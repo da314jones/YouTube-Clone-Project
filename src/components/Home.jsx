@@ -3,22 +3,18 @@ import IframePlayer from "./IframePlayer";
 import NavBar from "./NavBar";
 import SearchBar from "./SearchBar";
 
-export default function Home({items}) {
-  console.log(items)
+export default function Home({ setSearchQuery }) {
   const location = useLocation();
 
   return (
     <div>
       <header>
-        {/* <IframePlayer /> */}
-        <img src="public/welcome_icon.png" alt="welcome-image" />
-        </header>
-        {location.pathname === '/' && (
-          <footer>
-            <SearchBar />
-          </footer>
-        )}
-      
+        <NavBar />
+      </header>
+      <img src="public/welcome_icon.png" alt="welcome-image" />
+      <footer>
+        <SearchBar setSearchQuery={setSearchQuery} />
+      </footer>
     </div>
   );
-};
+}

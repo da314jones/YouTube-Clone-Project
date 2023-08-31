@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function SearchBar({onSearch}) {
-    const [query, setQuery] = useState("");
+export default function SearchBar({setSearchQuery}) {
+    const [localQuery, setLocalQuery] = useState("");
+    const navigate = useNavigate();
 
-    const handleSearch = () => {
-        if(query) {
-            onSearch(query);
-        }
-    };
+ const handleSearch = () => {
+    setSearchQuery(localQuery);
+    navigate('/thumbnails');
+ }
 
     return (
         <div>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder='Search' />
+            <input type="text" value={localQuery} onChange={(e) => setLocalQuery(e.target.value)} placeholder='Search' />
             <button onClick={handleSearch} >Search</button>
         </div>
     );
