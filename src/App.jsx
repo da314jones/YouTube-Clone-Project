@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-
-import { getAllVideos } from '../Api/fetch';
+import { getOneVideo, getVideosBySearchQuery, getCommentsByVideoId, getDefaultPopulation } from '../Api/fetch';
 import About from './components/About';
 import CommentsForm from './components/CommentsForm';
 import CommentsList from './components/CommentsList';
@@ -12,63 +11,47 @@ import SearchBar from './components/SearchBar';
 import TeamInfo from './components/TeamInfo';
 import VideoShowPage from './components/VideoShowPage';
 import VideoThumbNailsList from './components/VideoThumbNailsList';
-import { getDanceHallVideos } from '../Api/fetch';
 
 
 function App() {
  
- 
 
-  const [count, setCount] = useState(0)
-  const [danceHallVideos, setDanceHallVideos] = useState([])
   const [loadingError, setLoadingError] = useState(false)
   const [videos, setVideos] = useState([]);
-// 
-// 
-// 
-useEffect(() => {
-  getDanceHallVideos()
-  .then((danceHallJson) => {
-    setDanceHallVideos(danceHallJson.items);
-    setLoadingError(false);
-  })
-  .catch((err) => {
-    setLoadingError(true);
-    console.error(err);
-  });
-}, []);
-// 
-// 
-// 
+  const [searchQuery, setSearchQuery] = useState("")
+
   useEffect(() =>  {
-    // console.log(videos)
-    getAllVideos()
-    .then((videosJson) => {
-      setVideos(videosJson)
+    console.log("uesEffect Triggered")
+    if (!searchQuery) {
+      getVideosBySearchQuery(searchQuery)
+    .then((data) => {
+      console.log("Raw api:", data)
+      console.log("Videos by query:", data.items)
+      setVideos(data.items)
       setLoadingError(false)
     })
     .catch((err) => {
       setLoadingError(true);
       console.error(err)
-    })
-  }, [])
+    });
+  }
+  }, [searchQuery]);
   
-  console.log(videos);
-  console.log(danceHallVideos)
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    console.log("Current video State:", videos);
+  }
+  
 
   return (
   
       <Router>
         <NavBar />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home  />} />
           <Route path="/about" element={<About />}  />
-          <Route path="/videos/:videoId" element={<VideoShowPage videos={videos} />}  />
-          <Route path="/thumbnails" element={<VideoThumbNailsList items={danceHallVideos} />}  />
-          <Route path="/team" element={<TeamInfo/>}  />
-          <Route path="/search" element={<SearchBar />}  />
-          <Route path="/comments" element={<CommentsList />}  />
-          <Route path="/comments-form" element={<CommentsForm />}  />
+          <Route path="/videos/:videoId" element={<VideoShowPage  />}  />
+          <Route path="/thumbnails" element={<VideoThumbNailsList items={videos} />}  />
         </Routes>
         {loadingError && <p>Error loading videos.</p>}
       </Router>

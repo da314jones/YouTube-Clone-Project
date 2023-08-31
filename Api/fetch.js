@@ -3,29 +3,30 @@ const URL = import.meta.env.VITE_BASE_API_KEY
 
 
 // default to pass props and states
-export function getDanceHallVideos() {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=dancehall&key=${URL}`)
+export function getDefaultPopulation() {
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=popular&key=${URL}`)
       .then((res) => res.json())
       .catch((err) => {
-        console.error("Error fetching dancehall videos:", err);
+        console.error("Error fetching popular videos:", err);
       });
   }
 
 // Index/getAll
 
-export function getAllVideos () {
+export function getVideosBySearchQuery (query) {
 
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxresults=25&q=${query}&key=${URL}`)
 
     .then(res => res.json())
 }
+
 export function getOneVideo () {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${searchVariable}&key=${URL}`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&id=${videoId}&key=${URL}`)
     .then(res => res.json())
 }
 
-export function getThumbNailsAndId () {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/thumbnails/set?videoId=YOUR_VIDEO_ID&key=${URL}`)
+export function getCommentsByVideoId () {
+    return fetch(`https://youtube.googleapis.com/youtube/v3/commentsThreads?part=snippet&videoId=${videoId}&key=${URL}`)
     .then(res => res.json())
 }
 
