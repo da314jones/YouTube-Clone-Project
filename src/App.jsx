@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import useSearchBarPosition from "./hooks/hooks";
 import "./App.css";
 import {
   getOneVideo,
@@ -12,6 +13,7 @@ import VideoShowPage from "./components/VideoShowPage";
 import VideoThumbNailsList from "./components/VideoThumbNailsList";
 
 function App() {
+  // const position = useSearchBarPosition();
   const [loadingError, setLoadingError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,7 +37,8 @@ function App() {
 
   return (
     <Router>
-      <div className="parent w-full">
+      <div className="">
+        {/* {!isHomePage && <header className="w-full"><Navbar /><SearchBar setSearchQuery={setSearchQuery} /> </header>} */}
       <Routes>
         <Route path="/" element={<Home setSearchQuery={setSearchQuery} />} />
         <Route path="/about" element={<About />} />
@@ -50,6 +53,7 @@ function App() {
           }
         />
       </Routes>
+      {/* {isHomePage && <footer className="w-full"><SearchBar setSearchQuery={setSearchQuery} /> </footer>} */}
       {loadingError && <p>Error loading videos.</p>}
       </div>
     </Router>

@@ -5,11 +5,11 @@ export default function Home({ setSearchQuery }) {
 
   return (
     <>
-      <header className="w-full">
+      <header className="">
         <NavBar />
       </header>
       <img src="/welcome_icon.png" alt="welcome-image" />
-      <footer className="w-full">
+      <footer className="">
         <SearchBar setSearchQuery={setSearchQuery} />
       </footer>
     </>
