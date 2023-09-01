@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
-    return (
-        <div>
-            <label htmlFor="">{}</label>
-            <input type="text" placeholder='Search' />
-        </div>
-    );
+export default function SearchBar({ setSearchQuery }) {
+  const [localQuery, setLocalQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    setSearchQuery(localQuery);
+    navigate("/thumbnails");
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={localQuery}
+        onChange={(e) => setLocalQuery(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Search"
+      />
+      <button onClick={handleSearch}>Search</button>
+    </div>
+  );
 }
-
-export default SearchBar;

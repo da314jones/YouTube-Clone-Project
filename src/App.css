@@ -1,3 +1,32 @@
+/* src/main.css */
+@import './tailwindcss/base';
+@import './tailwindcss/components';
+@import './tailwindcss/utilities';
+
+
+/* Your custom styles here */
+
+@font-face {
+  font-family: 'Beautiful Delicious';
+  src: url('./assets/fonts/BDScript-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Beautiful Delicious';
+  src: url('./assets/fonts/BDScript-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.navbar-script {
+  font-family: 'Beautiful Delicious', sans-serif;
+  font-size: 3rem;
+}
+
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +69,4 @@
 .read-the-docs {
   color: #888;
 }
+

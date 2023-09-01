@@ -1,18 +1,17 @@
-import React from "react";
-import IframePlayer from "./IframePlayer";
 import NavBar from "./NavBar";
+import SearchBar from "./SearchBar";
 
-const Home = () => {
+export default function Home({ setSearchQuery }) {
+
   return (
     <div>
-        <header>
-            <h1>You Tube Clone</h1>
-            <NavBar />
-        </header>
-      <IframePlayer />
+      <header>
+        <NavBar />
+      </header>
+      <img src="/welcome_icon.png" alt="welcome-image" />
+      <footer>
+        <SearchBar setSearchQuery={setSearchQuery} />
+      </footer>
     </div>
   );
-};
-
-
-export default Home;
+}
