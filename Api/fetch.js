@@ -26,7 +26,7 @@ export function getOneVideo () {
 }
 
 export function getCommentsByVideoId () {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/commentsThreads?part=snippet&videoId=${videoId}&key=${URL}`)
+    return fetch(`https://www.googleapis.com/youtube/v3/commentThreads?key=${URL}&part=snippet&videoId=${videoId}&maxResults=20`)
     .then(res => res.json())
 }
 

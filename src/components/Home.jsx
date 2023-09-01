@@ -8,7 +8,7 @@ export default function Home({ setSearchQuery }) {
       <header>
         <NavBar />
       </header>
-      <img src="public/welcome_icon.png" alt="welcome-image" />
+      <img src="/welcome_icon.png" alt="welcome-image" />
       <footer>
         <SearchBar setSearchQuery={setSearchQuery} />
       </footer>

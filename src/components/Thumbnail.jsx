@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function ThumbNail({item}) {
 
+
     return (
         <div className='thumbnail-item'>
             <Link to={`/videos/${item.id.videoId}`}>
@@ -10,6 +11,7 @@ export default function ThumbNail({item}) {
             </Link>
             <p>{item.snippet.title}</p>
             <p>{item.snippet.description}</p>
+           
         </div>
     )
 }
