@@ -4,10 +4,11 @@ import NavBar from "./NavBar";
 
 export default function TeamInfo() {
   return (
-    <div>
+    <>
       <header>
         <NavBar />
         <SearchBar />
+      </header>
         <Card>
           Nicole Slater
         </Card>
@@ -17,7 +18,6 @@ export default function TeamInfo() {
         <Card>
           Jefferson Chua
         </Card>
-      </header>
-    </div>
+    </>
   );
 }

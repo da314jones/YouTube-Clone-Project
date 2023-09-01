@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 export default function NavBar() {
 
   return (
-    <div className='navbar text-gold-700'>
+    <div className='text-6xl font-bold  navbar-script'>
       <Link to="/">YouTube </Link>
       <Link to="/about"> About</Link>
     </div>

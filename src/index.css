@@ -1,9 +1,10 @@
-/* src/main.css */
-@import './tailwindcss/base';
-@import './tailwindcss/components';
-@import './tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Your custom styles here */
+.radial-purple {
+  background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136))
+}
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -36,6 +37,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136))
 }
 
 h1 {

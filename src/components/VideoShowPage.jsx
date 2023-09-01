@@ -50,7 +50,7 @@ export default function VideoShowPage({ items }) {
   console.log(video);
 
   return (
-    <div>
+    <>
       <header>
         <NavBar />
         <SearchBar />
@@ -63,6 +63,6 @@ export default function VideoShowPage({ items }) {
       />
       <CommentsList items={items} />
       <CommentsForm />
-    </div>
+    </>
   );
 }

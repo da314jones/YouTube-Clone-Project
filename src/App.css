@@ -1,11 +1,3 @@
-/* src/main.css */
-@import './tailwindcss/base';
-@import './tailwindcss/components';
-@import './tailwindcss/utilities';
-
-
-/* Your custom styles here */
-
 @font-face {
   font-family: 'Beautiful Delicious';
   src: url('./assets/fonts/BDScript-Regular.ttf') format('truetype');

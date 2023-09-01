@@ -17,7 +17,7 @@ export default function SearchBar({ setSearchQuery }) {
   };
 
   return (
-    <div>
+    <>
       <input
         type="text"
         value={localQuery}
@@ -26,6 +26,6 @@ export default function SearchBar({ setSearchQuery }) {
         placeholder="Search"
       />
       <button onClick={handleSearch}>Search</button>
-    </div>
+    </>
   );
 }

@@ -8,7 +8,6 @@ import {
 } from "../Api/fetch";
 import About from "./components/About";
 import Home from "./components/Home";
-import NavBar from "./components/NavBar";
 import VideoShowPage from "./components/VideoShowPage";
 import VideoThumbNailsList from "./components/VideoThumbNailsList";
 
@@ -36,6 +35,7 @@ function App() {
 
   return (
     <Router>
+      <div className="parent w-full">
       <Routes>
         <Route path="/" element={<Home setSearchQuery={setSearchQuery} />} />
         <Route path="/about" element={<About />} />
@@ -51,6 +51,7 @@ function App() {
         />
       </Routes>
       {loadingError && <p>Error loading videos.</p>}
+      </div>
     </Router>
   );
 }

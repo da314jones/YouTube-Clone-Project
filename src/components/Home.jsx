@@ -4,14 +4,14 @@ import SearchBar from "./SearchBar";
 export default function Home({ setSearchQuery }) {
 
   return (
-    <div>
-      <header>
+    <>
+      <header className="w-full">
         <NavBar />
       </header>
       <img src="/welcome_icon.png" alt="welcome-image" />
-      <footer>
+      <footer className="w-full">
         <SearchBar setSearchQuery={setSearchQuery} />
       </footer>
-    </div>
+    </>
   );
 }
