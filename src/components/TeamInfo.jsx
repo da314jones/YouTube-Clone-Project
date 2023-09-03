@@ -1,23 +1,12 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import NavBar from "./NavBar";
+import { Card } from "react-bootstrap";
 
 export default function TeamInfo() {
   return (
-    <>
-      <header>
-        <NavBar />
-        <SearchBar />
-      </header>
-        <Card>
-          Nicole Slater
-        </Card>
-        <Card>
-          Dwayne Jones
-        </Card>
-        <Card>
-          Jefferson Chua
-        </Card>
-    </>
+    <div className="team-info-container flex justify-between space-x-6">
+      <Card className="card mx-2 p-4">Nicole Slater</Card>
+      <Card className="card mx-2 p-4">Dwayne Jones</Card>
+      <Card className="card mx-2 p-4">Jefferson Chua</Card>
+    </div>
   );
 }

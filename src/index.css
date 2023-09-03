@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.radial-purple {
+/* .radial-purple {
   background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136))
-}
-
+} */
+/* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,19 +31,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136))
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
 button {
   border-radius: 8px;
@@ -52,9 +39,8 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
@@ -75,5 +61,5 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
 

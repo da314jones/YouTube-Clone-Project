@@ -1,27 +1,47 @@
+.container {
+display: flexbox;
+  margin: auto;
+  /* padding: 0 10px ; */
+}
+
 @font-face {
-  font-family: 'Beautiful Delicious';
-  src: url('./assets/fonts/BDScript-Regular.ttf') format('truetype');
+  font-family: "Beautiful Delicious";
+  src: url("./assets/fonts/BDScript-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Beautiful Delicious';
-  src: url('./assets/fonts/BDScript-Bold.ttf') format('truetype');
+  font-family: "Beautiful Delicious";
+  src: url("./assets/fonts/BDScript-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
-}
-
-.navbar-script {
-  font-family: 'Beautiful Delicious', sans-serif;
-  font-size: 7rem;
   color: red;
 }
 
+.navbar-script {
+  font-family: "Beautiful Delicious", sans-serif;
+  font-size: 7rem;
+  color: red;
+}
+.header {
+  border: 5px solid black;
+  display: flex;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: 90vh;
+  background-color: white;
+}
 
 
+/* 
 #root {
-  max-width: 1280px;
+width: 100vw;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -63,3 +83,9 @@
   color: #888;
 }
 
+.container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+} */

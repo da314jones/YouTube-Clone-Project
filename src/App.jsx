@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import useSearchBarPosition from "./hooks/hooks";
+import { useLocation } from "react-router-dom";
+import useSearchBarPosition from "./Hooks/hooks";
 import "./App.css";
 import {
   getOneVideo,
   getVideosBySearchQuery,
   getCommentsByVideoId,
 } from "../Api/fetch";
-import About from "./components/About";
-import Home from "./components/Home";
-import VideoShowPage from "./components/VideoShowPage";
+import NavBar from "./components/NavBar";
+import SearchBar from "./components/SearchBar";
+import About from "./Components/About";
+import Home from "./Components/Home";
+import VideoShowPage from "./Components/VideoShowPage";
 import VideoThumbNailsList from "./components/VideoThumbNailsList";
 
 function App() {
-  // const position = useSearchBarPosition();
-  const [loadingError, setLoadingError] = useState(false);
-  const [videos, setVideos] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-
-  useEffect(() => {
+const [showSearchBar, setShowSearchBar] = useState(true);
+const [loadingError, setLoadingError] = useState(false);
+const [videos, setVideos] = useState([]);
+const [searchQuery, setSearchQuery] = useState("");
+  
+useEffect(() => {
     console.log("uesEffect Triggered");
     if (searchQuery) {
       getVideosBySearchQuery(searchQuery)
@@ -37,10 +40,14 @@ function App() {
 
   return (
     <Router>
-      <div className="">
-        {/* {!isHomePage && <header className="w-full"><Navbar /><SearchBar setSearchQuery={setSearchQuery} /> </header>} */}
-      <Routes>
-        <Route path="/" element={<Home setSearchQuery={setSearchQuery} />} />
+      <div className="container flex flex-col justify-center items-center h-full">
+      <header className="header flex items-center justify-between bg-custom-gray">
+        <NavBar />
+        {showSearchBar && <SearchBar setSearchQuery={setSearchQuery} />}
+      </header>
+        <div className="routes">
+        <Routes>
+        <Route path="/" element={<Home setSearchQuery={setSearchQuery} setShowSearchBar={setShowSearchBar} />} />
         <Route path="/about" element={<About />} />
         <Route path="/videos/:videoId" element={<VideoShowPage />} />
         <Route
@@ -53,8 +60,8 @@ function App() {
           }
         />
       </Routes>
-      {/* {isHomePage && <footer className="w-full"><SearchBar setSearchQuery={setSearchQuery} /> </footer>} */}
       {loadingError && <p>Error loading videos.</p>}
+      </div>
       </div>
     </Router>
   );

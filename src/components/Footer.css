@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: end;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding: 5px;
+    padding-bottom: 0
+    ;
+    border: 2px solid black;
+
+}

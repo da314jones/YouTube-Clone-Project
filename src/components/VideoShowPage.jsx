@@ -4,8 +4,6 @@ import { getCommentsByVideoId, getOneVideo } from "../../Api/fetch";
 import IframePlayer from "./IframePlayer";
 import CommentsList from "./CommentsList";
 import CommentsForm from "./CommentsForm";
-import NavBar from "./NavBar";
-import SearchBar from "./SearchBar";
 
 export default function VideoShowPage({ items }) {
   const { videoId } = useParams();
@@ -51,10 +49,7 @@ export default function VideoShowPage({ items }) {
 
   return (
     <>
-      <header>
-        <NavBar />
-        <SearchBar />
-      </header>
+      
       <IframePlayer
         src={iframeSrc}
         title={`Video ${videoId}`}

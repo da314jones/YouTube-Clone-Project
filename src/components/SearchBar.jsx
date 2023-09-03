@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import './Search.css'
 
 export default function SearchBar({ setSearchQuery }) {
   const [localQuery, setLocalQuery] = useState("");
@@ -17,15 +21,24 @@ export default function SearchBar({ setSearchQuery }) {
   };
 
   return (
-    <>
-      <input
+    <div className="search-container flex bg-custom-gray" >
+      <div className="center-label inline">
+      <Button  className="justify-center items-center  hover:bg-blu-500 hover:text-indigo-500 focus:outline-none focus:border-purple-900 focus:ring  " size="lg" id="button-addon2" onClick={handleSearch} type="button">
+        SEARCH FOR VIDEO
+      </Button>
+      </div>
+    <InputGroup className="form-control-lg ml-auto">
+      <Form.Control
+      className="search_input text-black-600"
         type="text"
         value={localQuery}
         onChange={(e) => setLocalQuery(e.target.value)}
         onKeyDown={handleKeyDown}
         placeholder="Search"
+        aria-label="SEARCH "
+        aria-describedby="button-addon2"
       />
-      <button onClick={handleSearch}>Search</button>
-    </>
+    </InputGroup>
+    </div>
   );
 }
