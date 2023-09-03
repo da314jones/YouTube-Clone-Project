@@ -15,7 +15,7 @@ export default function ThumbNail({ item }) {
             <Image
             className="thumbnail-image"
               src={item.snippet.thumbnails.default.url}
-              rounded
+              round
               alt={item.snippet.title}
             />
           </Link>
