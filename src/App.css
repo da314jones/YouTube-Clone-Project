@@ -1,5 +1,5 @@
 .container {
-display: flexbox;
+  display: flexbox;
   margin: auto;
   /* padding: 0 10px ; */
 }
@@ -35,9 +35,10 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: 90vh;
-  background-color: white;
+  /* alternate backgrounds below */
+  /* background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136)); */
+  /* background-color: lightgrey; */
 }
-
 
 /* 
 #root {

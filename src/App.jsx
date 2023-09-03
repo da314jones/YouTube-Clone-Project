@@ -40,7 +40,7 @@ useEffect(() => {
 
   return (
     <Router>
-      <div className="container flex flex-col justify-center items-center h-full">
+      <div className="container flex flex-col justify-center items-center ">
       <header className="header flex items-center justify-between bg-custom-gray">
         <NavBar />
         {showSearchBar && <SearchBar setSearchQuery={setSearchQuery} />}

@@ -26,5 +26,5 @@
 
 }
 .center-label:hover {
-    background-color: red;
+  background: radial-gradient(rgb(189, 194, 63), rgb(51, 120, 76));
 }

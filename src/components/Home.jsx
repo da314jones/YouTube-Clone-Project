@@ -16,7 +16,8 @@ export default function Home({ setSearchQuery, setShowSearchBar }) {
   return (
     <div className="home-container">
       <div className="body">
-      <Image className="enlarged-image" src="/welcome_icon.png"  rounded alt="welcome-image" />
+        {/* alternate image color available red or whit background located in public folder*/}
+      <Image className="enlarged-image" src="/welcome_white_icon.png"  rounded alt="welcome-image" />
       </div>
       <Footer setSearchQuery={setSearchQuery} />
     </div>

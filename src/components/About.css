@@ -4,7 +4,13 @@ h1 {
   justify-content: center;
   color: #646cff;
   margin-left: 100px;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
   text-shadow: 2px 2px 4px #0000bb;
   font-style: italic;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.about-body {
+
 }
