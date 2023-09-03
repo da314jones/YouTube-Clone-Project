@@ -1,2 +1,17 @@
 .team-info-container {
 }
+
+.djones-image {
+    border-radius: 50px;
+}
+
+.circle-image {
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px; 
+  }
+
+  .djones-card {
+    border: 2px solid green;
+    border-radius: 10%;
+  }

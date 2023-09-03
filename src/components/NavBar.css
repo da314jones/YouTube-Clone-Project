@@ -2,7 +2,7 @@
   flex-grow: 0;
   flex-shrink: 0;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-left: 10px;
   padding-left: 10px;
   font-family: "Beautiful Delicious", sans-serif;
