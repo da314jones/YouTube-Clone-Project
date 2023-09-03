@@ -1,20 +1,41 @@
 import React, { useState } from "react";
-import Djones from "./Djones";
-import "./TeamInfo.css";
+import NSlater from "./Bios/NSlater";
+import DJones from "./Bios/DJones";
+import JChua from "./Bios/JChua";
 import { Card } from "react-bootstrap";
+import './TeamInfo.css'
+
 
 export default function TeamInfo() {
-  const [modalShow, setModalShow] = useState(false);
+  const [modalShow, setModalShow] = useState({DJones: false, NSlater: false, JChua: false});
 
   return (
     <>
-      <div className="team-info-container flex justify-between space-x-6">
-        <Card className="card flex-auto mx-2 p-4 djones-card style={{ width: '18rem' }}">
+      <div className="team-info-container flex justify-between space-x-8">
+        <Card className="card flex-auto mx-2 p-4 nslater-card" style={{ width: '18rem' }}>
           <Card.Body style={{ width: "18rem" }}>
             <Card.Title>
               <h1
                 className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
-                onClick={() => setModalShow(true)}
+                onClick={() => setModalShow({...modalShow, NSlater: true})}
+              >
+Nicole Slater       </h1>
+            </Card.Title>
+            <br />
+            <Card.Text>
+             Quick Greeting and alil about our site from you
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+      <NSlater show={modalShow.NSlater} onHide={() => setModalShow({...modalShow, NSlater: false})} />
+      <div className="team-info-container flex justify-between space-x-6">
+        <Card className="card flex-auto mx-2 p-4 djones-card" style={{ width: '18rem' }}>
+          <Card.Body style={{ width: "18rem" }}>
+            <Card.Title>
+              <h1
+                className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
+                onClick={() => setModalShow({...modalShow, DJones: true})}
               >
                 Dwayne Jones
               </h1>
@@ -29,7 +50,25 @@ export default function TeamInfo() {
           </Card.Body>
         </Card>
       </div>
-      <Djones show={modalShow} onHide={() => setModalShow} />
+      <DJones show={modalShow.DJones} onHide={() => setModalShow({...modalShow, DJones: false})} />
+      <div className="team-info-container flex justify-between space-x-8">
+        <Card className="card flex-auto mx-2 p-4 jchua-card" style={{ width: '18rem' }}>
+          <Card.Body style={{ width: "18rem" }}>
+            <Card.Title>
+              <h1
+                className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
+                onClick={() => setModalShow({...modalShow, JChua: true})}
+              >
+Jefferson Chua              </h1>
+            </Card.Title>
+            <br />
+            <Card.Text>
+             Quick Greeting and alil about our site from you
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </div>
+      <JChua show={modalShow.JChua} onHide={() => setModalShow({...modalShow, JChua: false})} />
     </>
   );
 }

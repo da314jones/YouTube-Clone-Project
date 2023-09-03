@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import useSearchBarPosition from "./Hooks/hooks";
-import "./App.css";
 import {
   getOneVideo,
   getVideosBySearchQuery,
@@ -14,6 +13,8 @@ import About from "./Components/About";
 import Home from "./Components/Home";
 import VideoShowPage from "./Components/VideoShowPage";
 import VideoThumbNailsList from "./components/VideoThumbNailsList";
+
+import "./App.css";
 
 function App() {
 const [showSearchBar, setShowSearchBar] = useState(true);

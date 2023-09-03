@@ -1,7 +1,15 @@
-.team-info-container {
-}
+/* .team-info-container  {
+    display: flex;
+    justify-content: space-between;
+} */
 
+.nslater-image {
+    border-radius: 50px;
+}
 .djones-image {
+    border-radius: 50px;
+}
+.jchua-image {
     border-radius: 50px;
 }
 
@@ -11,7 +19,31 @@
     height: 100px; 
   }
 
+  .nslater-card {
+    border: 2px solid purple;
+    border-radius: 10%;
+    margin-top: 60px;
+  }
+  
   .djones-card {
     border: 2px solid green;
     border-radius: 10%;
+    margin-top: 60px;
   }
+  
+  .jchua-card {
+    border: 2px solid blue;
+    border-radius: 10%;
+    margin-top: 60px;
+  }
+  
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 10px;
+    padding: 40px;
+    border-radius: 25px;
+  }
+
