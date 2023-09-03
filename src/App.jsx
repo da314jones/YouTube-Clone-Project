@@ -42,14 +42,15 @@ useEffect(() => {
   return (
     <Router>
       <div className="container flex flex-col justify-center items-center ">
-      <header className="header flex items-center justify-between bg-custom-gray">
+        <div className="sub-flex">
+      <header className="header flex items-center justify-between bg-custom-gray bg-opacity-95">
         <NavBar />
         {showSearchBar && <SearchBar setSearchQuery={setSearchQuery} />}
       </header>
         <div className="routes">
         <Routes>
         <Route path="/" element={<Home setSearchQuery={setSearchQuery} setShowSearchBar={setShowSearchBar} />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" className="flex" element={<About />} />
         <Route path="/videos/:videoId" element={<VideoShowPage />} />
         <Route
           path="/thumbnails"
@@ -62,6 +63,7 @@ useEffect(() => {
         />
       </Routes>
       {loadingError && <p>Error loading videos.</p>}
+      </div>
       </div>
       </div>
     </Router>

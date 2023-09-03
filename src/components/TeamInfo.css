@@ -1,7 +1,7 @@
-/* .team-info-container  {
-    display: flex;
-    justify-content: space-between;
-} */
+.team-info-container {
+    display: flex !important;
+justify-content: space-between !important;
+}
 
 .nslater-image {
     border-radius: 50px;
@@ -22,19 +22,28 @@
   .nslater-card {
     border: 2px solid purple;
     border-radius: 10%;
-    margin-top: 60px;
+    margin: auto;
+    /* margin-top: 60px; */
+    padding: 20px;
+    height: 300px;
   }
   
   .djones-card {
     border: 2px solid green;
     border-radius: 10%;
-    margin-top: 60px;
+    /* margin: auto; */
+    /* margin-top: 60px; */
+    padding: 20px;
+    height: 300px;
   }
   
   .jchua-card {
     border: 2px solid blue;
     border-radius: 10%;
-    margin-top: 60px;
+    margin: auto;
+    /* margin-top: 60px; */
+    padding: 20px;
+    height: 300px;
   }
   
   .modal {
@@ -42,8 +51,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 10px;
+    /* margin: 10px; */
     padding: 40px;
     border-radius: 25px;
   }
 
+  p {
+    width: 250px;
+  }

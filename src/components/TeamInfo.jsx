@@ -11,9 +11,9 @@ export default function TeamInfo() {
 
   return (
     <>
-      <div className="team-info-container flex justify-between space-x-8">
-        <Card className="card flex-auto mx-2 p-4 nslater-card" style={{ width: '18rem' }}>
-          <Card.Body style={{ width: "18rem" }}>
+      <div className="team-info-container flex">
+        <Card className="card nslater-card" style={{ width: '18rem' }}>
+          <Card.Body >
             <Card.Title>
               <h1
                 className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
@@ -27,11 +27,9 @@ Nicole Slater       </h1>
             </Card.Text>
           </Card.Body>
         </Card>
-      </div>
       <NSlater show={modalShow.NSlater} onHide={() => setModalShow({...modalShow, NSlater: false})} />
-      <div className="team-info-container flex justify-between space-x-6">
-        <Card className="card flex-auto mx-2 p-4 djones-card" style={{ width: '18rem' }}>
-          <Card.Body style={{ width: "18rem" }}>
+        <Card className="card djones-card" style={{ width: '18rem' }}>
+          <Card.Body >
             <Card.Title>
               <h1
                 className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
@@ -49,11 +47,9 @@ Nicole Slater       </h1>
             </Card.Text>
           </Card.Body>
         </Card>
-      </div>
       <DJones show={modalShow.DJones} onHide={() => setModalShow({...modalShow, DJones: false})} />
-      <div className="team-info-container flex justify-between space-x-8">
-        <Card className="card flex-auto mx-2 p-4 jchua-card" style={{ width: '18rem' }}>
-          <Card.Body style={{ width: "18rem" }}>
+        <Card className="card jchua-card" style={{ width: '18rem' }}>
+          <Card.Body>
             <Card.Title>
               <h1
                 className="text-3xl hover:bg-blue-500 hover:text-white hover:shadow-lg cursor-pointer"
