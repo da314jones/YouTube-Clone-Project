@@ -7,13 +7,13 @@ import "./Search.css";
 
 export default function SearchBar({ setSearchQuery }) {
   const [localQuery, setLocalQuery] = useState("");
-  const [buttonLabel, setButtonLabel] = useState('SEARCH FOR VIDEO')
+  const [buttonLabel, setButtonLabel] = useState("SEARCH FOR VIDEO");
   const navigate = useNavigate();
 
   const handleSearch = () => {
     setSearchQuery(localQuery);
     navigate("/thumbnails");
-    setButtonLabel(`Search Results for: ${localQuery}`)
+    setButtonLabel(`Search Results for: ${localQuery}`);
   };
 
   const handleKeyDown = (e) => {
@@ -21,6 +21,7 @@ export default function SearchBar({ setSearchQuery }) {
       handleSearch();
     }
   };
+  // console.log(setSearchQuery)
 
   return (
     <div className="search-container flex bg-custom-gray">

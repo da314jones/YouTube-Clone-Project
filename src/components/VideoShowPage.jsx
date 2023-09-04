@@ -35,9 +35,9 @@ export default function VideoShowPage({ items }) {
         });
     }
   }, [videoId]);
-  
+
   if (!videoId) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   const iframeSrc = `http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://example.com`;
@@ -49,7 +49,6 @@ export default function VideoShowPage({ items }) {
 
   return (
     <>
-      
       <IframePlayer
         src={iframeSrc}
         title={`Video ${videoId}`}

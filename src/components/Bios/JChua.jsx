@@ -3,7 +3,6 @@ import { Modal, Button, Image } from "react-bootstrap";
 import "../TeamInfo.css";
 
 export default function JChua({ show, onHide }) {
-
   return (
     <Modal
       show={show}

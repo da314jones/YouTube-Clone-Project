@@ -9,6 +9,10 @@
     border-radius: 10px;
 }
 
+.search-button {
+    color: red;
+}
+
 .search_input {
     width: 400px;
     margin: 5px 80px;

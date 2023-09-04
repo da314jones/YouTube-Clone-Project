@@ -3,7 +3,6 @@ import { Modal, Button, Image } from "react-bootstrap";
 import "../TeamInfo.css";
 
 export default function DJones({ show, onHide }) {
-
   return (
     <Modal
       show={show}
@@ -12,11 +11,14 @@ export default function DJones({ show, onHide }) {
       centered
       className="modal bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500"
     >
-      <Modal.Header className="flex justify-between" >
+      <Modal.Header className="flex justify-between">
         <Modal.Title id="contained-modal-title-vcenter" className="flex-1">
           Dwayne Jones
         </Modal.Title>
-        <Button className="custom-close-button bg-gray-500 py-2 px-6 text-white font-bold rounded" onClick={onHide}>
+        <Button
+          className="custom-close-button bg-gray-500 py-2 px-6 text-white font-bold rounded"
+          onClick={onHide}
+        >
           Close
         </Button>
       </Modal.Header>
@@ -51,21 +53,27 @@ export default function DJones({ show, onHide }) {
           project success */}
         </p>
         <div className="mt-4">
-        <Button
-          className="one bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded shadow"
-          href="https://www.linkedin.com/in/dwayne-a-j-2772a6274"
-          variant="primary"
-        >LinkedIn</Button>
-        <Button
-          className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
-          href="https://github.com/da314jones"
-          variant="primary"
-        >GitHub</Button>
-        <Button
-          className="three bg-blue-500 mx-4 hover:bg-green-700 text-white font-bold py-2 px-10 rounded shadow"
-          href="mailto:dwaynejones@pursuit.org"
-          variant="primary"
-        >email</Button>
+          <Button
+            className="one bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded shadow"
+            href="https://www.linkedin.com/in/dwayne-a-j-2772a6274"
+            variant="primary"
+          >
+            LinkedIn
+          </Button>
+          <Button
+            className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
+            href="https://github.com/da314jones"
+            variant="primary"
+          >
+            GitHub
+          </Button>
+          <Button
+            className="three bg-blue-500 mx-4 hover:bg-green-700 text-white font-bold py-2 px-10 rounded shadow"
+            href="mailto:dwaynejones@pursuit.org"
+            variant="primary"
+          >
+            email
+          </Button>
         </div>
       </Modal.Body>
     </Modal>
