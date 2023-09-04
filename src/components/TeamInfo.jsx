@@ -12,6 +12,22 @@ export default function TeamInfo() {
     JChua: false,
   });
 
+  const showNSlaterModal = () => {
+    setModalShow({ DJones: false, NSlater: true, JChua: false });
+  };
+
+  const showDJonesModal = () => {
+    setModalShow({ DJones: true, NSlater: false, JChua: false });
+  };
+
+  const showJChuaModal = () => {
+    setModalShow({ DJones: false, NSlater: false, JChua: true });
+  };
+
+  const closeModal = () => {
+    setModalShow({ DJones: false, NSlater: false, JChua: false });
+  };
+
   return (
     <>
       <div className="team-info-container flex">
@@ -26,14 +42,20 @@ export default function TeamInfo() {
               </h1>
             </Card.Title>
             <br />
-            <Card.Text>
+            <Card.Text className="nslater-card-text">
               Quick Greeting and alil about our site from you
+              <br />
+              <br />
+              Click my name to learn more about my journey, skills, and
+              contributions.
             </Card.Text>
           </Card.Body>
         </Card>
         <NSlater
           show={modalShow.NSlater}
           onHide={() => setModalShow({ ...modalShow, NSlater: false })}
+          showDJonesModal={showDJonesModal}
+          showJChuaModal={showJChuaModal}
         />
         <Card className="card djones-card" style={{ width: "18rem" }}>
           <Card.Body>
@@ -46,17 +68,20 @@ export default function TeamInfo() {
               </h1>
             </Card.Title>
             <br />
-            <Card.Text>
-              You have been looking at one of our first major team projects.
-              When you are done here please take a look at our personal sites
-              and look at some more of our work. <br />
-              Thanks for stopping by.
+            <Card.Text className="djones-card-text">
+              Crafting digital experiences with my talented team. Dive into our
+              latest collaborative effort. <br /> Thank you for stopping by!
+              <br />
+              <br /> Click my name to learn more about my journey, skills, and
+              contributions.
             </Card.Text>
           </Card.Body>
         </Card>
         <DJones
           show={modalShow.DJones}
           onHide={() => setModalShow({ ...modalShow, DJones: false })}
+          showNSlaterModal={showNSlaterModal}
+          showJChuaModal={showJChuaModal}
         />
         <Card className="card jchua-card" style={{ width: "18rem" }}>
           <Card.Body>
@@ -69,8 +94,12 @@ export default function TeamInfo() {
               </h1>
             </Card.Title>
             <br />
-            <Card.Text>
+            <Card.Text className="jchua-card-text">
               Quick Greeting and alil about our site from you
+              <br />
+              <br />
+              Click my name to learn more about my journey, skills, and
+              contributions.
             </Card.Text>
           </Card.Body>
         </Card>
@@ -78,6 +107,8 @@ export default function TeamInfo() {
       <JChua
         show={modalShow.JChua}
         onHide={() => setModalShow({ ...modalShow, JChua: false })}
+        showNSlaterModal={showNSlaterModal}
+        showDJonesModal={showDJonesModal}
       />
     </>
   );

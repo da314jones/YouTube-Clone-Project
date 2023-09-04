@@ -21,8 +21,8 @@ export default function ThumbNail({ item }) {
           </Link>
         </Col>
         <Col xs={6} md={8}>
-          <p>{item.snippet.title}</p>
-          <p>{item.snippet.description}</p>
+          <p className="thumbnail-p">{item.snippet.title}</p>
+          {/* <p>{item.snippet.description}</p> */}
         </Col>
       </Row>
     </Container>

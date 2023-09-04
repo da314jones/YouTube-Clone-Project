@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Image } from "react-bootstrap";
 import "../TeamInfo.css";
 
-export default function JChua({ show, onHide }) {
+export default function JChua({ show, onHide, showNSlaterModal, showDJonesModal }) {
   return (
     <Modal
       show={show}
@@ -52,6 +52,14 @@ export default function JChua({ show, onHide }) {
           >
             email
           </Button>
+          <div className="flex justify-end">
+          <a className="mr-4 text-gray-500 py-1" href="#nslater-card" onClick={showNSlaterModal}>
+            see Nicoles' info
+          </a>
+          <a href="#djones-card" className="text-gray-500 py-1" onClick={showDJonesModal}>
+            see Dwaynes' info
+          </a>
+        </div>
         </div>
       </Modal.Body>
     </Modal>

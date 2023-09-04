@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Image } from "react-bootstrap";
 import "../TeamInfo.css";
 
-export default function NSlater({ show, onHide }) {
+export default function NSlater({ show, onHide, showDJonesModal, showJChuaModal }) {
   return (
     <Modal
       show={show}
@@ -52,6 +52,14 @@ export default function NSlater({ show, onHide }) {
           >
             email
           </Button>
+          <div className="flex justify-end">
+          <a className="mr-4 text-gray-500 py-1" href="#djones-card" onClick={showDJonesModal}>
+            see Dwaynes' info
+          </a>
+          <a href="#jchua-card" className="text-gray-500 py-1" onClick={showJChuaModal}>
+            see Jeffersons' info
+          </a>
+        </div>
         </div>
       </Modal.Body>
     </Modal>
