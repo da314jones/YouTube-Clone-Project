@@ -21,7 +21,6 @@ export default function SearchBar({ setSearchQuery }) {
       handleSearch();
     }
   };
-  // console.log(setSearchQuery)
 
   return (
     <div className="search-container flex bg-custom-gray">

@@ -40,7 +40,7 @@ export default function JChua({ show, onHide, showNSlaterModal, showDJonesModal 
           </Button>
           <Button
             className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
-            href=""
+            href="https://github.com/Jeffchua96"
             variant="primary"
           >
             GitHub

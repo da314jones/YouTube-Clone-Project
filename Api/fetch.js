@@ -13,8 +13,8 @@ export function getDefaultPopulation() {
 
 // Index/getAll
 
-export function getVideosBySearchQuery (query) {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&part=snippet&q=${query}&maxResults=25`)
+export function getVideosBySearchQuery (query, maxResults = 50, order = 'relevance') {
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&part=snippet&q=${query}&maxResults=${maxResults}&order=${order}`)
     .then(res => res.json())
 }
 

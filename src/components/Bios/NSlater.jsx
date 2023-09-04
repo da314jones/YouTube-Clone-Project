@@ -40,7 +40,7 @@ export default function NSlater({ show, onHide, showDJonesModal, showJChuaModal 
           </Button>
           <Button
             className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
-            href=""
+            href="https://github.com/nicoleslater"
             variant="primary"
           >
             GitHub
