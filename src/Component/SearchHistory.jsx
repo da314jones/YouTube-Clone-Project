@@ -1,34 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function SearchHistory() {
 const [searchHistory, setSearchHistory] = useState([]);
-const [videoViewedHistory, setVideoViewedHistory] = useState([]);
-const [favorites, setFavorites] = useState([]);
 
 useEffect(() => {
     const savedSearchHistory = localStorage.getItem('searchHistory');
-    const savedVideoViewedHistory = localStorage.getItem('searchHistory');
-    const savedFavorites = localStorage.getItem('favorites');
 
     if (savedSearchHistory) {
         setSearchHistory(JSON.parse(savedSearchHistory));
     }
-
-    if (savedVideoViewedHistory) {
-        setVideoViewedHistory(JSON.parse(savedVideoViewedHistory));
-    }
-
-    if (savedFavorites) {
-        setFavorites(JSON.parse(savedFavorites));
-    }
 }, [])
 
-
 useEffect(() => {
-    localStorage.getItem('favorites', JSON.stringify(favorites));
-    localStorage.getItem('videoViewedHistory', JSON.stringify(videoViewedHistory));
-    localStorage.getItem('savedFavorites', JSON.stringify(videoViewedHistory));
-}, [searchHistory, videoViewedHistory, favorites])
+    localStorage.setItem('SearchHistory', JSON.stringify(SearchHistory));
+}, [searchHistory])
 
   return (
     <div>

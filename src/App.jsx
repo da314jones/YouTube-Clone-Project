@@ -12,7 +12,6 @@ import Home from "./Component/Home";
 import VideoShowPage from "./Component/VideoShowPage";
 import VideoThumbNailsList from "./Component/VideoThumbNailsList";
 import ErrorNotFound from "./Component/ErrorNotFound";
-
 import "./App.css";
 
 function App() {
@@ -64,23 +63,44 @@ function App() {
                 }
               />
               <Route
-                path="*"
+                path="/thumbnails"
                 element={
-                  <ErrorNotFound
-                    setShowSearchBar={setShowSearchBar}
-                    setSearchQuery={setSearchQuery}
+                  <VideoThumbNailsList
+                  items={videos}
+                  setSearchQuery={setSearchQuery}
                   />
                 }
               />
               <Route
-                path="/thumbnails"
+                path="/search-history"
                 element={
-                  <VideoThumbNailsList
-                    items={videos}
-                    setSearchQuery={setSearchQuery}
+                  <SearchHistory
                   />
                 }
               />
+              <Route
+                path="/viewed-videos"
+                element={
+                  <VideoThumbNailsList
+                  />
+                }
+              />
+              <Route
+                path="/favorites"
+                element={
+                  <Favorites
+                  />
+                }
+              />
+                <Route
+                  path="*"
+                  element={
+                    <ErrorNotFound
+                      setShowSearchBar={setShowSearchBar}
+                      setSearchQuery={setSearchQuery}
+                    />
+                  }
+                />
             </Routes>
             {loadingError && <p>Error loading videos.</p>}
           </div>
