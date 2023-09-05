@@ -13,8 +13,12 @@ import VideoShowPage from "./Component/VideoShowPage";
 import VideoThumbNailsList from "./Component/VideoThumbNailsList";
 import ErrorNotFound from "./Component/ErrorNotFound";
 import "./App.css";
+import ViewedVideos from "./Component/ViewedVideos";
+import UserPage from "./Component/UserPage";
+import SearchHistory from "./Component/SearchHistory";
 
 function App() {
+  console.log("App rendered")
   const [showSearchBar, setShowSearchBar] = useState(true);
   const [loadingError, setLoadingError] = useState(false);
   const [videos, setVideos] = useState([]);
@@ -72,6 +76,13 @@ function App() {
                 }
               />
               <Route
+                path="/user"
+                element={
+                  <UserPage
+                  />
+                }
+              />
+              <Route
                 path="/search-history"
                 element={
                   <SearchHistory
@@ -81,7 +92,7 @@ function App() {
               <Route
                 path="/viewed-videos"
                 element={
-                  <VideoThumbNailsList
+                  <ViewedVideos
                   />
                 }
               />

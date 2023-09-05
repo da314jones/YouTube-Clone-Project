@@ -37,6 +37,19 @@ export default function VideoShowPage({  }) {
     }
   }, [videoId]);
 
+function handleVideoView(video) {
+  const existingHistory = JSON.parse(localSrorage.getItem('videoViewedHistory') || "[]");
+  const updatedHistory = [video, ...existingHistory];
+  localStorage.setItem('videoViewedHistory', JSON.stringify(updatedHistory));
+}
+
+function handleVideoView(fullVideoObject) {
+  const video = {
+    id: fullVideoObject.id,
+    title: fullVideoObject.title,
+    thumbnailUrl: fullVideoObject.thumbnailUrl
+  }
+}
 
   console.log(video);
 

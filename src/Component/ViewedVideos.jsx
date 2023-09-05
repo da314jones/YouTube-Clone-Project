@@ -1,11 +1,12 @@
 import React, { useState, UseEffect } from 'react'
-import { BrowserRouter } from 'react-router-dom';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export default function ViewedVideos() {
     const [videoViewedHistory, setVideoViewedHistory] = useState([]);
 
     useEffect(() => {
-        const savedVideoViewedHistory = localStorage.getItem('searchHistory');
+        const savedVideoViewedHistory = localStorage.getItem('videoViewedHistory');
         if (savedVideoViewedHistory) {
             setVideoViewedHistory(JSON.parse(savedVideoViewedHistory));
         }
@@ -20,9 +21,9 @@ export default function ViewedVideos() {
     <div>
         <h2>Previously Viewed Video</h2>
         <ul>
-      {videoViewed.map((item) => (
-        <li key={video.id}>
-            <img src={video.thumbnailUrl} alt={`Thumbnail for ${video.title}`} />
+      {videoViewedHistory.map((item) => (
+        <li key={item.id}>
+            <img src={item.thumbnailUrl} alt={`Thumbnail for ${video.title}`} />
         <span>{video.title}</span>
         </li>
       ))}

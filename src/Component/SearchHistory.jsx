@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+
 
 export default function SearchHistory() {
 const [searchHistory, setSearchHistory] = useState([]);
@@ -14,7 +16,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-    localStorage.setItem('SearchHistory', JSON.stringify(SearchHistory));
+    localStorage.setItem('searchHistory', JSON.stringify(SearchHistory));
 }, [searchHistory])
 
   return (
