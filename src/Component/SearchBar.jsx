@@ -12,8 +12,7 @@ export default function SearchBar({ setSearchQuery }) {
 
   const handleSearch = () => {
     setSearchQuery(localQuery);
-    navigate("/thumbnails");
-    setButtonLabel(`Search Results for: ${localQuery}`);
+    navigate("/thumbnails", { state: {searchTerm: localQuery }});
   };
 
   const handleKeyDown = (e) => {

@@ -5,13 +5,13 @@ import {
   getVideosBySearchQuery,
   getCommentsByVideoId,
 } from "../Api/fetch";
-import NavBar from "./Components/NavBar";
-import SearchBar from "./Components/SearchBar";
-import About from "./Components/About";
-import Home from "./Components/Home";
-import VideoShowPage from "./Components/VideoShowPage";
-import VideoThumbNailsList from "./components/VideoThumbNailsList";
-import ErrorNotFound from "./Components/ErrorNotFound";
+import NavBar from "./Component/NavBar";
+import SearchBar from "./Component/SearchBar";
+import About from "./Component/About";
+import Home from "./Component/Home";
+import VideoShowPage from "./Component/VideoShowPage";
+import VideoThumbNailsList from "./Component/VideoThumbNailsList";
+import ErrorNotFound from "./Component/ErrorNotFound";
 
 import "./App.css";
 
@@ -22,21 +22,16 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
-    console.log("uesEffect Triggered");
-    if (searchQuery) {
-      getVideosBySearchQuery(searchQuery)
-        .then((data) => {
-          console.log("Raw api:", data);
-          console.log("Videos by query:", data.items);
-          setVideos(data.items);
-          setLoadingError(false);
-        })
-        .catch((err) => {
-          setLoadingError(true);
-          console.error(err);
-        });
-    }
-  }, [searchQuery]);
+    if (searchQuery.trim() !== "") {
+    getVideosBySearchQuery(searchQuery)
+    .then(data => {
+      setVideos(data.items || []);
+    })
+    .catch(err => {
+      setLoadingError(true);
+      console.error("Error fetching videos:", err);
+    })}
+  },[searchQuery])
 
   return (
     <Router>
@@ -58,7 +53,7 @@ function App() {
                 }
               />
               <Route path="/about" className="flex" element={<About />} />
-              <Route path="/videos/:videoId" element={<VideoShowPage />} />
+              <Route path="/video/:videoId" element={<VideoShowPage />} />
               <Route
                 path="/error"
                 element={

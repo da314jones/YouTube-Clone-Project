@@ -5,10 +5,11 @@ import IframePlayer from "./IframePlayer";
 import CommentsList from "./CommentsList";
 import CommentsForm from "./CommentsForm";
 
-export default function VideoShowPage({ items }) {
+export default function VideoShowPage({  }) {
   const { videoId } = useParams();
   console.log(videoId);
   const [video, setVideo] = useState(null);
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -31,31 +32,20 @@ export default function VideoShowPage({ items }) {
           setComments(data.items);
         })
         .catch((err) => {
-          console.Error(err);
+          console.error(err);
         });
     }
   }, [videoId]);
 
-  if (!videoId) {
-    return <div>Loading...</div>;
-  }
-
-  const iframeSrc = `http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://example.com`;
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
 
   console.log(video);
 
   return (
     <>
-      <IframePlayer
-        src={iframeSrc}
-        title={`Video ${videoId}`}
-        width="560"
-        height="315"
-      />
-      <CommentsList items={items} />
+    {loading && <div>Loading...</div>}
+    {error && <div className="error-message">{error}</div>}
+      {!error && <IframePlayer videoId={videoId} />}
+      <CommentsList items={comments} />
       <CommentsForm />
     </>
   );
