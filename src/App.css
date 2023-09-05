@@ -38,3 +38,10 @@ body {
   /* background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136)); */
   /* background-color: lightgrey; */
 }
+
+.user-icon {
+  max-width: 40px;
+  max-height: 40px;
+  margin-right: 40px;
+  border-radius: ;
+}
