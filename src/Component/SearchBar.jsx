@@ -12,9 +12,15 @@ export default function SearchBar({ setSearchQuery }) {
 
   const handleSearch = () => {
     setSearchQuery(localQuery);
-    navigate("/thumbnails");
-    setButtonLabel(`Search Results for: ${localQuery}`);
+    saveSearchToHistory(localQuery)
+    navigate("/thumbnails", { state: {searchTerm: localQuery }});
   };
+
+const saveSearchToHistory = (query) => {
+  const existingHistory = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+  const  updatedHistory = [{searchTerm: query }, ...existingHistory];
+  localStorage.setItem('searchHistory', JSON.stringify(updatedHistory))
+}
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -47,6 +53,7 @@ export default function SearchBar({ setSearchQuery }) {
           aria-describedby="button-addon2"
         />
       </InputGroup>
+      
     </div>
   );
 }
