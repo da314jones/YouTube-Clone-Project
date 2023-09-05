@@ -4,8 +4,6 @@ import { getCommentsByVideoId, getOneVideo } from "../../Api/fetch";
 import IframePlayer from "./IframePlayer";
 import CommentsList from "./CommentsList";
 import CommentsForm from "./CommentsForm";
-import NavBar from "./NavBar";
-import SearchBar from "./SearchBar";
 
 export default function VideoShowPage({ items }) {
   const { videoId } = useParams();
@@ -37,9 +35,9 @@ export default function VideoShowPage({ items }) {
         });
     }
   }, [videoId]);
-  
+
   if (!videoId) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   const iframeSrc = `http://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=http://example.com`;
@@ -50,11 +48,7 @@ export default function VideoShowPage({ items }) {
   console.log(video);
 
   return (
-    <div>
-      <header>
-        <NavBar />
-        <SearchBar />
-      </header>
+    <>
       <IframePlayer
         src={iframeSrc}
         title={`Video ${videoId}`}
@@ -63,6 +57,6 @@ export default function VideoShowPage({ items }) {
       />
       <CommentsList items={items} />
       <CommentsForm />
-    </div>
+    </>
   );
 }

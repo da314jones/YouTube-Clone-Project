@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import { useEffect } from "react";
 import "./Home.css";
 
-export default function Home({ setSearchQuery, setShowSearchBar }) {
+export default function ErrorNotFound({ setSearchQuery, setShowSearchBar }) {
   useEffect(() => {
     setShowSearchBar(false);
     return () => {
@@ -16,8 +16,8 @@ export default function Home({ setSearchQuery, setShowSearchBar }) {
       <div className="end-body">
         {/* alternate image color available red or whit background located in public folder*/}
         <Image
-          className="enlarged-image-welcome"
-          src="/welcome_white_icon.png"
+          className="enlarged-image-error"
+          src="public/search_error_icon.png"
           rounded
           alt="welcome-image"
         />

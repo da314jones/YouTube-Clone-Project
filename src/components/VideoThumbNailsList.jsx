@@ -1,17 +1,13 @@
 import ThumbNail from "./Thumbnail";
-import NavBar from "./NavBar";
-import SearchBar from "./SearchBar";
+import "./VideoThumbNailsList.css";
 
-export default function VideoThumbNailsList({ items, setSearchQuery }) {
-
+export default function VideoThumbNailsList({ items  }) {
   return (
-    <div className="thumbnail-list">
-      <header>
-        <NavBar />
-        <SearchBar setSearchQuery={setSearchQuery} />
-      </header>
+    <div className="thumbnail-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {items.map((item, index) => (
-        <ThumbNail key={item.id} item={item} />
+        <div key={index} onClick={() => selectedVideo(item.id.videoId)}>
+          <ThumbNail item={item} />
+        </div>
       ))}
     </div>
   );

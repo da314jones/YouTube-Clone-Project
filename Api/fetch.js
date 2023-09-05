@@ -13,15 +13,13 @@ export function getDefaultPopulation() {
 
 // Index/getAll
 
-export function getVideosBySearchQuery (query) {
-
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxresults=25&q=${query}&key=${URL}`)
-
+export function getVideosBySearchQuery (query, maxResults = 50, order = 'relevance') {
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&part=snippet&q=${query}&maxResults=${maxResults}&order=${order}`)
     .then(res => res.json())
 }
 
 export function getOneVideo () {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&id=${videoId}&key=${URL}`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?&key=${URL}part=snippet&id=${videoId}`)
     .then(res => res.json())
 }
 
