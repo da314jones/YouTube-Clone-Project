@@ -16,7 +16,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-    localStorage.setItem('searchHistory', JSON.stringify(SearchHistory));
+    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
 }, [searchHistory])
 
   return (

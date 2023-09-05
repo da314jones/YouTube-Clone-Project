@@ -20,6 +20,7 @@ export default function VideoShowPage({  }) {
         .then((data) => {
           setVideo(data.items[0]);
           setLoading(false);
+          handleVideoView(data.items[0]);
         })
         .catch((err) => {
           setError(err.message);
@@ -37,19 +38,22 @@ export default function VideoShowPage({  }) {
     }
   }, [videoId]);
 
-function handleVideoView(video) {
-  const existingHistory = JSON.parse(localSrorage.getItem('videoViewedHistory') || "[]");
-  const updatedHistory = [video, ...existingHistory];
-  localStorage.setItem('videoViewedHistory', JSON.stringify(updatedHistory));
-}
-
 function handleVideoView(fullVideoObject) {
+  if (!fullVideoObject || !fullVideoObject.id || !fullVideoObject.title || !fullVideoObject.thumbnailUrl) {
+    console.error("Invalid video object passed to VideoView.")
+  }
   const video = {
     id: fullVideoObject.id,
     title: fullVideoObject.title,
     thumbnailUrl: fullVideoObject.thumbnailUrl
-  }
-}
+  };
+
+
+  const existingHistory = JSON.parse(localStorage.getItem('videoViewedHistory') || "[]");
+  if (!existingHistory.some(video => video.id === fullVideoObject.id)) {
+  const updatedHistory = [video, ...existingHistory];
+  localStorage.setItem('videoViewedHistory', JSON.stringify(updatedHistory));
+}}
 
   console.log(video);
 

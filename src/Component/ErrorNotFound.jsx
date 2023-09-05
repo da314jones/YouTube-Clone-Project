@@ -17,9 +17,9 @@ export default function ErrorNotFound({ setSearchQuery, setShowSearchBar }) {
         {/* alternate image color available red or whit background located in public folder*/}
         <Image
           className="enlarged-image-error"
-          src="public/search_error_icon.png"
+          src="/search_error_icon.png"
           rounded
-          alt="welcome-image"
+          alt="search-again-image"
         />
       </div>
       <Footer setSearchQuery={setSearchQuery} />

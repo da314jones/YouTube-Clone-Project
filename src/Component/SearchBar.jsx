@@ -12,7 +12,7 @@ export default function SearchBar({ setSearchQuery }) {
 
   const handleSearch = () => {
     setSearchQuery(localQuery);
-    saveSearchHistory(localQuery)
+    saveSearchToHistory(localQuery)
     navigate("/thumbnails", { state: {searchTerm: localQuery }});
   };
 
@@ -53,6 +53,7 @@ const saveSearchToHistory = (query) => {
           aria-describedby="button-addon2"
         />
       </InputGroup>
+      
     </div>
   );
 }

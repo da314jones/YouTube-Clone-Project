@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   getOneVideo,
   getVideosBySearchQuery,
   getCommentsByVideoId,
 } from "../Api/fetch";
+import { Image } from "react-bootstrap";
 import NavBar from "./Component/NavBar";
 import SearchBar from "./Component/SearchBar";
 import About from "./Component/About";
@@ -16,6 +18,7 @@ import "./App.css";
 import ViewedVideos from "./Component/ViewedVideos";
 import UserPage from "./Component/UserPage";
 import SearchHistory from "./Component/SearchHistory";
+import Favorites from "./Component/Favorites";
 
 function App() {
   console.log("App rendered")
@@ -23,6 +26,7 @@ function App() {
   const [loadingError, setLoadingError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+
 
   useEffect(() => {
     if (searchQuery.trim() !== "") {
@@ -36,6 +40,12 @@ function App() {
     })}
   },[searchQuery])
 
+const handleUserIcon = () => {
+  window.location.href = '/user';
+}
+
+
+
   return (
     <Router>
       <div className="container flex flex-col justify-center items-center ">
@@ -43,6 +53,12 @@ function App() {
           <header className="header flex items-center justify-between bg-custom-gray bg-opacity-95">
             <NavBar />
             {showSearchBar && <SearchBar setSearchQuery={setSearchQuery} />}
+            <Image
+          className="user-icon"
+           src="/user-icon.png" 
+          alt="user-icon"
+          onClick={handleUserIcon}
+          style={{cursor: 'pointer'}} />
           </header>
           <div className="routes">
             <Routes>

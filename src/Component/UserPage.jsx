@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchHistory from "./SearchHistory";
 import ViewedVideos from "./ViewedVideos";
 import Favorites from "./Favorites";
