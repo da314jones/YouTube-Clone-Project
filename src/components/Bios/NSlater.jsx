@@ -40,14 +40,14 @@ export default function NSlater({ show, onHide, showDJonesModal, showJChuaModal 
           </Button>
           <Button
             className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
-            href="https://github.com/nicoleslater"
+            href="https://www.linkedin.com/in/nicole-slater-2a9598123/"
             variant="primary"
           >
             GitHub
           </Button>
           <Button
             className="three bg-blue-500 mx-4 hover:bg-green-700 text-white font-bold py-2 px-10 rounded shadow"
-            href=""
+            href="https://github.com/nicoleslater"
             variant="primary"
           >
             email
@@ -59,6 +59,7 @@ export default function NSlater({ show, onHide, showDJonesModal, showJChuaModal 
           <a href="#jchua-card" className="text-gray-500 py-1" onClick={showJChuaModal}>
             see Jeffersons' info
           </a>
+          <a className=""></a>
         </div>
         </div>
       </Modal.Body>
