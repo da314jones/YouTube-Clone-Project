@@ -43,8 +43,7 @@ export default function TeamInfo() {
             </Card.Title>
             <br />
             <Card.Text className="nslater-card-text">
-              Quick Greeting and alil about our site from you
-              <br />
+            As a Full-Stack Web Developer, I'm dedicated to shaping exceptional digital journeys. Thank you and please enjoy!              <br />
               <br />
               Click my name to learn more about my journey, skills, and
               contributions.
@@ -95,8 +94,7 @@ export default function TeamInfo() {
             </Card.Title>
             <br />
             <Card.Text className="jchua-card-text">
-              Quick Greeting and alil about our site from you
-              <br />
+            Featuring what we have learned so far and we faced the challenge head on. Come check us out.              <br />
               <br />
               Click my name to learn more about my journey, skills, and
               contributions.

@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.split-background-horizontal {
+width: 100vw;
+  background-image: linear-gradient(to bottom, #f5f5ef 80%
+  , #c6dad4 20%);
+}
+
 @font-face {
   font-family: "Beautiful Delicious";
   src: url("./assets/fonts/BDScript-Regular.ttf") format("truetype");

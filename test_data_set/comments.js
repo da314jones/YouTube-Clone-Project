@@ -1,12 +1,4 @@
-{
-    "kind": "youtube#commentThreadListResponse",
-    "etag": "Xoi6aMXK3fWs0hyKjxfGTaxUt78",
-    "nextPageToken": "QURTSl9pMnZHLW9ocnc0bENZazdSYjM4YXRFQ3F4eEkydHFtWHBRQS11S1drbW8xSkNRMXk0VVpraE1CV1lTNElCeWVkMVAxOVpld284NA==",
-    "pageInfo": {
-        "totalResults": 20,
-        "resultsPerPage": 20
-    },
-    "items": [
+export const comments =  [
         {
             "kind": "youtube#commentThread",
             "etag": "u7fSU-RymVh5Tuvea22ARr2EvJ0",
@@ -688,4 +680,3 @@
             }
         }
     ]
-}

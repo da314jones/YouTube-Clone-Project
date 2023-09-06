@@ -29,7 +29,11 @@ export default function NSlater({ show, onHide, showDJonesModal, showJChuaModal 
           roundedCircle
         />
         <h4>FullStack Engineer</h4>
-        <p>SomeThings about you and you experience; goals, traits etc...</p>
+        <p>I'm passionate about crafting digital experiences and with a background in education, I've honed my skills in communication, problem-solving, and adaptability.
+ <br />I believe in the power of education to transform lives, and I'm dedicated to creating online platforms that make learning engaging, accessible, and effective.
+<br />When I'm not coding, you'll find me immersed in the world of theatre. My love for the stage has taught me the art of storytelling, teamwork, and the importance of captivating an audience.
+<br />Let's connect and collaborate on projects that blend the precision of code with the magic of storytelling. Together, we can create digital wonders that inspire, educate, and entertain.
+</p>
         <div className="mt-4">
           <Button
             className="one bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded shadow"

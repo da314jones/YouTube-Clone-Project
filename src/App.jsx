@@ -15,7 +15,7 @@ import VideoShowPage from "./Component/VideoShowPage";
 import VideoThumbNailsList from "./Component/VideoThumbNailsList";
 import ErrorNotFound from "./Component/ErrorNotFound";
 import "./App.css";
-import ViewedVideos from "./Component/ViewedVideos";
+import ViewedVideos from "./Component/ViewedHistory";
 import UserPage from "./Component/UserPage";
 import SearchHistory from "./Component/SearchHistory";
 import Favorites from "./Component/Favorites";
@@ -26,9 +26,11 @@ function App() {
   const [loadingError, setLoadingError] = useState(false);
   const [videos, setVideos] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [fetchData, setFetchData] = useState(true);
 
 
   useEffect(() => {
+    if (fetchData) {}
     if (searchQuery.trim() !== "") {
     getVideosBySearchQuery(searchQuery)
     .then(data => {
@@ -38,7 +40,7 @@ function App() {
       setLoadingError(true);
       console.error("Error fetching videos:", err);
     })}
-  },[searchQuery])
+  },[searchQuery, fetchData])
 
 const handleUserIcon = () => {
   window.location.href = '/user';
@@ -48,7 +50,7 @@ const handleUserIcon = () => {
 
   return (
     <Router>
-      <div className="container flex flex-col justify-center items-center ">
+      <div className="container flex flex-col justify-center items-center split-background-horizontal">
         <div className="sub-flex">
           <header className="header flex items-center justify-between bg-custom-gray bg-opacity-95">
             <NavBar />

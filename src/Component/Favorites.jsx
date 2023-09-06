@@ -1,31 +1,41 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Favorites() {
-    const [favorites, setFavorites] = useState([]);
-    
-    useEffect(() => {
-        const savedFavorites = localStorage.getItem('favorites');
-    
-        if (savedFavorites) {
-            setFavorites(JSON.parse(savedFavorites));
-        }
-    }, [])
-    
-    useEffect(() => {
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-    }, [favorites])
+  const [favoriteVideos, setFavoriteVideos] = useState([]);
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    setFavoriteVideos(storedFavorites);
+  }, []);
+ 
+
+  const handleRemoveFavorite = (videoId) => {
+    const updatedFavorites = favoriteVideos.filter(
+      (video) => video.id !== videoId
+    );
+    setFavoriteVideos(updatedFavorites);
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+  };
 
   return (
     <div>
-        <h2>Favorite Videos</h2>
-        <ul>
-      {favorites.map((video) => (
-        <li key={video.id}>
-            <img src={video.thumbnailUrl} alt={`thumbnail for ${video.title}`} />
-        <span>{video.title}</span>
-        </li>
+      <h2>Favorites</h2>
+      <ul>
+        {favoriteVideos.map((video, index) => (
+          <li key={index}>
+            <Link
+              to={`/video/${video.id}`}>
+              {video.title || `Favorite Video ${index + 1}`}{" "}
+            </Link>
+            <button onClick={() => handleRemoveFavorite(video.id)}>
+              Remove from Favorites
+            </button>
+          </li>
         ))}
-        </ul>
+      </ul>
     </div>
-  )
+  );
 }

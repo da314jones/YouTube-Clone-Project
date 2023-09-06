@@ -29,7 +29,7 @@ export default function JChua({ show, onHide, showNSlaterModal, showDJonesModal 
           roundedCircle
         />
         <h4>FullStack Engineer</h4>
-        <p>SomeThings about you and you experience; goals, traits etc...</p>
+        <p>A Believer and follower for Christ, I follow one rule" Do unto others what you want others do unto you!",applying all that Ive learn in coding to make each person's life be more comfortable but earth friendly. </p>
         <div className="mt-4">
           <Button
             className="one bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-8 rounded shadow"
@@ -40,14 +40,14 @@ export default function JChua({ show, onHide, showNSlaterModal, showDJonesModal 
           </Button>
           <Button
             className="two bg-blue-500 mx-4 hover:bg-blue-700 text-white font-bold py-2 px-10 rounded shadow"
-            href="https://github.com/Jeffchua96"
+            href="https://linkedin.com/jeffersonchua"
             variant="primary"
           >
             GitHub
           </Button>
           <Button
             className="three bg-blue-500 mx-4 hover:bg-green-700 text-white font-bold py-2 px-10 rounded shadow"
-            href=""
+            href="https://github.com/Jeffchua96"
             variant="primary"
           >
             email

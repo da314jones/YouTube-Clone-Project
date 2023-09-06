@@ -1,13 +1,4 @@
-{
-    "kind": "youtube#searchListResponse",
-    "etag": "qUxy3IScQ6BOEX_3HCmrRC_NgBQ",
-    "nextPageToken": "CBkQAA",
-    "regionCode": "US",
-    "pageInfo": {
-        "totalResults": 1000000,
-        "resultsPerPage": 25
-    },
-    "items": [
+export const items = [
         {
             "kind": "youtube#searchResult",
             "etag": "iZcNqo1wexUOYG3chbn2Kw8OWo4",
@@ -853,4 +844,3 @@
             }
         }
     ]
-}

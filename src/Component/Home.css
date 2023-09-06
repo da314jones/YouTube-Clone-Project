@@ -21,7 +21,31 @@
 .enlarged-image-welcome {
     width: 700px;
     height: 700px;
+    
 }
+
+.enlarged-image-welcome {
+    width: 700px;
+    height: 700px;
+    position: relative;
+}
+
+.enlarged-image-welcome::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(176, 169, 169, 0.816); /* White with 50% transparency */
+    z-index: 1; 
+}
+
+.enlarged-image-welcome img {
+    position: relative;
+    z-index: 0;
+}
+
 
 .enlarged-image-error {
     width: 700px;

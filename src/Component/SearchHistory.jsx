@@ -1,32 +1,62 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
+import React, { useState, useEffect } from 'react';
+import { getVideosBySearchQuery } from '../../Api/fetch';  
 
 export default function SearchHistory() {
-const [searchHistory, setSearchHistory] = useState([]);
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [thumbnails, setThumbnails] = useState([]);  
 
-useEffect(() => {
-    const savedSearchHistory = localStorage.getItem('searchHistory');
+  useEffect(() => {
+    const storedSearchHistory = JSON.parse(
+      localStorage.getItem("searchHistory") || "[]"
+    );
+    setSearchHistory(storedSearchHistory);
+  }, []);
 
-    if (savedSearchHistory) {
-        setSearchHistory(JSON.parse(savedSearchHistory));
+  const handleSearch = () => {
+    if (!searchTerm.trim()) return;
+
+    const updatedSearchHistory = [...searchHistory, searchTerm];
+    localStorage.setItem("searchHistory", JSON.stringify(updatedSearchHistory));
+    setSearchHistory(updatedSearchHistory);
+    setSearchTerm(''); 
+  };
+
+  const handleSearchTermClick = async (clickedTerm) => {
+    try {
+    const results = await getVideosBySearchQuery(clickedTerm);
+    if (results && results.items) {
+      setThumbnails(results.items);
     }
-}, [])
-
-useEffect(() => {
-    localStorage.setItem('searchHistory', JSON.stringify(searchHistory));
-}, [searchHistory])
+  } catch (error) {
+    console.error("Error fetching videos", error)
+  }
+  };
 
   return (
     <div>
-      {searchHistory.map((item) => (
-        <div key={item.searchTerm}>
-          <img src={item.firstResultThumbnail} alt="Thumbnail" />
-          <span>{item.searchTerm}</span>
-        </div>
-      ))}
+      <h2>Search History</h2>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button onClick={handleSearch}>Search</button>
+      <ul>
+        {searchHistory.map((term, index) => (
+          <li key={index} onClick={() => { console.log("Term clicked:", term); handleSearchTermClick(term); }}>
+            {term.searchTerm}
+          </li>
+        ))}
+      </ul>
+      <div>
+        {thumbnails.map((video, index) => (
+          <div key={index}>
+            <img src={video.snippet.thumbnails.default.url} alt={video.snippet.title} />
+            <p>{video.snippet.title}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

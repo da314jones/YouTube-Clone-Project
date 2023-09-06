@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.split-background-horizontal {
+  width: 100vw;
+    background-image: linear-gradient(to bottom, #f5f5ef 80%
+    , #c6dad4 20%);
+  }
+
 /* .radial-purple {
   background: radial-gradient(rgb(228, 114, 114), rgb(136, 37, 136))
 } */

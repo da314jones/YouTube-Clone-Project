@@ -1,4 +1,7 @@
 .iframe-player-container {
-    margin-top: 40px;
-    margin-left: 40px;
+    margin-top: 80px;
+    padding: px;
+    margin-left: 20px;
+    border: 5px solid red;
+    border-radius: 5px;
 }
