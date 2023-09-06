@@ -7,14 +7,20 @@ import "./Search.css";
 
 export default function SearchBar({ setSearchQuery }) {
   const [localQuery, setLocalQuery] = useState("");
-  const [buttonLabel, setButtonLabel] = useState('SEARCH FOR VIDEO')
+  const [buttonLabel, setButtonLabel] = useState("SEARCH FOR VIDEO");
   const navigate = useNavigate();
 
   const handleSearch = () => {
     setSearchQuery(localQuery);
-    navigate("/thumbnails");
-    setButtonLabel(`Search Results for: ${localQuery}`)
+    saveSearchToHistory(localQuery)
+    navigate("/thumbnails", { state: {searchTerm: localQuery }});
   };
+
+const saveSearchToHistory = (query) => {
+  const existingHistory = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+  const  updatedHistory = [{searchTerm: query }, ...existingHistory];
+  localStorage.setItem('searchHistory', JSON.stringify(updatedHistory))
+}
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
@@ -47,6 +53,7 @@ export default function SearchBar({ setSearchQuery }) {
           aria-describedby="button-addon2"
         />
       </InputGroup>
+      
     </div>
   );
 }
