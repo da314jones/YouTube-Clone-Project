@@ -7,3 +7,10 @@
     border-bottom-right-radius: 10px;
     border-top: 5px solid black;
 }
+
+.fav-button {
+    display: flex;
+width: 200px;
+height: 30px;
+align-items: center;
+}

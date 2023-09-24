@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Favorites.css"
+import { Button } from "react-bootstrap";
 
 export default function Favorites() {
   const [favoriteVideos, setFavoriteVideos] = useState([]);
@@ -31,9 +32,9 @@ export default function Favorites() {
               to={`/video/${video.id}`}>
               {video.title || `Favorite Video ${index + 1}`}{" "}
             </Link>
-            <button onClick={() => handleRemoveFavorite(video.id)}>
+            <Button className="bg-blue-500 fav-button text-white px-4 py-2 rounded" onClick={() => handleRemoveFavorite(video.id)}>
               Remove from Favorites
-            </button>
+            </Button>
           </li>
         ))}
       </ul>

@@ -20,13 +20,13 @@ export default function VideoHistory() {
 
   return (
     <div className='viewed-container'>
-      <h2 className='bg-custom-gray-500 text-black text-xl'>Video History</h2>
+      <h2 className=' text-black text-xl'>Video History</h2>
       {videoHistory.length === 0 ? (
         <p>No video history available.</p>
         ) : (
-      <ul>
+      <ul >
         {videoHistory.map((video, index) => (
-          <li key={index}>
+          <li className="video-history text-black" key={index}>
             <Link to={`/video/${video.id}`} >
              {video.title || `Viewed Video ${index + 1}`}{" "}
             </Link>
@@ -37,3 +37,5 @@ export default function VideoHistory() {
     </div>
   );
 }
+
+
