@@ -8,7 +8,7 @@ import {
   getCommentsByVideoId,
 } from "../Api/fetch";
 import { Image } from "react-bootstrap";
-import NavBar from "./Component/AppNavBar";
+import NavBar from "./Component/nav";
 import SearchBar from "./Component/SearchBar";
 import About from "./Component/About";
 import Home from "./Component/Home";

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
-import "./AppNavbar.css";
+import "./nav.css";
 
 export default function NavBar() {
   return (
@@ -17,3 +17,4 @@ export default function NavBar() {
     </Navbar>
   );
 }
+
