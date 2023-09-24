@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from 'axios';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {
@@ -28,19 +29,18 @@ function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [fetchData, setFetchData] = useState(true);
 
-
-  useEffect(() => {
-    if (fetchData) {}
-    if (searchQuery.trim() !== "") {
-    getVideosBySearchQuery(searchQuery)
-    .then(data => {
-      setVideos(data.items || []);
-    })
-    .catch(err => {
-      setLoadingError(true);
-      console.error("Error fetching videos:", err);
-    })}
-  },[searchQuery, fetchData])
+   useEffect(() => {
+    if (fetchData && searchQuery.trim() !== "") {
+      getVideosBySearchQuery(searchQuery)
+      .then(data => {
+        setVideos(data.items || []);
+      })
+      .catch(err => {
+        setLoadingError(true);
+        console.error("Error fetching videos:", err);
+      });
+    }
+  }, [searchQuery, fetchData]);
 
 const handleUserIcon = () => {
   window.location.href = '/user';
