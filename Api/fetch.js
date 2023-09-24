@@ -13,27 +13,19 @@ export function getDefaultPopulation() {
 
 // Index/getAll
 
-export function getVideosBySearchQuery(query) {
-  return axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&part=snippet&q=${query}&maxResults=25`)
-    .then(res => res.data)
-    .catch(err => {
-      console.error("Error fetching videos:", err);
-    });
+export function getVideosBySearchQuery (query) {
+  // https://youtube.googleapis.com/youtube/v3/search?key=AIzaSyBjRfBH2IBGi8nmetv4JViXF1sVnlYg9GM&part=snippet&q=dancehall&maxResults=25
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${URL}&part=snippet&q=${query}&maxResults=25`)
+    .then(res => res.json())
 }
 
 export function getOneVideo (videoId) {
-    return axios.get(`https://youtube.googleapis.com/youtube/v3/videos?key=${URL}&part=snippet&id=${videoId}`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/videos?key=${URL}&part=snippet&id=${videoId}`)
     .then(res => res.json())
-    .catch(err => {
-      console.error("Error fetching videos:", err)
-    })
 }
 
 export function getCommentsByVideoId (videoId) {
-    return axios.get(`https://www.googleapis.com/youtube/v3/commentThreads?key=${URL}&part=snippet&videoId=${videoId}&maxResults=20`)
-    .then(res => res.json()
-      .catch(err => {
-    console.error("Error fetching videos:", err)
-  })
+    return fetch(`https://www.googleapis.com/youtube/v3/commentThreads?key=${URL}&part=snippet&videoId=${videoId}&maxResults=20`)
+    .then(res => res.json())
 }
 
