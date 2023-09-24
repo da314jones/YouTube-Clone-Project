@@ -1,0 +1,8 @@
+.search-history-container {
+    background-color: #007BFF;
+  color: black;
+  width: 80%;
+  margin: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

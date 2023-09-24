@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Favorites.css"
 
 export default function Favorites() {
   const [favoriteVideos, setFavoriteVideos] = useState([]);
@@ -21,8 +22,8 @@ export default function Favorites() {
   };
 
   return (
-    <div>
-      <h2>Favorites</h2>
+    <div className="favorite-container">
+      <h2 className="bg-custom-gray-500 text-black text-xl">Favorites</h2>
       <ul>
         {favoriteVideos.map((video, index) => (
           <li key={index}>

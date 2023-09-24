@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import "./ViewedHistory.css"
 
 export default function VideoHistory() {
   const [videoHistory, setVideoHistory] = useState([]);
@@ -18,8 +19,8 @@ export default function VideoHistory() {
  
 
   return (
-    <div>
-      <h2>Video History</h2>
+    <div className='viewed-container'>
+      <h2 className='bg-custom-gray-500 text-black text-xl'>Video History</h2>
       {videoHistory.length === 0 ? (
         <p>No video history available.</p>
         ) : (

@@ -5,5 +5,10 @@
 
 .no-history {
     margin-top: 40px;
-    margin-left: 40px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    width: 80%;
 }

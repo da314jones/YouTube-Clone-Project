@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getVideosBySearchQuery } from '../../Api/fetch';  
+import { getVideosBySearchQuery } from '../../Api/fetch';
+import "./SearchHistory.css"  
 
 export default function SearchHistory() {
   const [searchHistory, setSearchHistory] = useState([]);
@@ -34,15 +35,9 @@ export default function SearchHistory() {
   };
 
   return (
-    <div>
-      <h2>Search History</h2>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
-      <ul>
+    <div className='search-history-container'>
+      <h2 className='bg-custom-gray-500 text-black text-xl'>Search History</h2>
+            <ul>
         {searchHistory.map((term, index) => (
           <li key={index} onClick={() => { console.log("Term clicked:", term); handleSearchTermClick(term); }}>
             {term.searchTerm}

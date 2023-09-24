@@ -30,7 +30,7 @@ const saveSearchToHistory = (query) => {
 
   return (
     <div className="search-container flex bg-custom-gray">
-      <div className="center-label inline">
+      <div className="center-label inline text-sm">
         <Button
           className="justify-center items-center  hover:bg-blu-500 hover:text-indigo-500 focus:outline-none focus:border-purple-900 focus:ring  "
           size="lg"
