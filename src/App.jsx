@@ -6,8 +6,8 @@ import {
   getOneVideo,
   getVideosBySearchQuery,
   getCommentsByVideoId,
-} from "../Api/fetch";
-import { Image } from "react-bootstrap";
+} from "../Api/ApiFetch";
+import AxiosSetup from "../Api/AxiosSetup";
 import NavBar from "./Component/nav";
 import SearchBar from "./Component/SearchBar";
 import About from "./Component/About";
@@ -20,6 +20,7 @@ import ViewedVideos from "./Component/ViewedHistory";
 import UserPage from "./Component/UserPage";
 import SearchHistory from "./Component/SearchHistory";
 import Favorites from "./Component/Favorites";
+import { Image } from "react-bootstrap";
 
 function App() {
   console.log("App rendered")
@@ -38,6 +39,8 @@ function App() {
       .catch(err => {
         setLoadingError(true);
         console.error("Error fetching videos:", err);
+        console.log(err.response);  // Logs the axios response object
+
       });
     }
   }, [searchQuery, fetchData]);
